@@ -1,7 +1,7 @@
 const data = [
     {
         name: 'Stand Collar Short Down Jacket',
-        price: 2600,
+        price: 700,
         img: 'images/1.jpg'
     },
     {
@@ -41,14 +41,26 @@ function addProduct(img, name, price) {
     const productImg = document.createElement('img');
     const newH3 = document.createElement('h3');
     const newP = document.createElement('p');
+    const addDiv = document.createElement('div');
+    const addDivText = document.createTextNode('ADD TO CART');
 
     productImg.src = img;
     newH3.appendChild(productName);
     newP.appendChild(productPrice);
+    addDiv.appendChild(addDivText);
 
-    newDiv.classList.add('grid-item')
-    newDiv.append(productImg, newH3, newP);
+    addDiv.classList.add('hidden');
+    newDiv.classList.add('grid-item');
+    newDiv.append(productImg, newH3, newP, addDiv);
     div.appendChild(newDiv);
+
+    newDiv.addEventListener('mouseover', () => {
+        addDiv.classList.add('show');
+    })
+
+    newDiv.addEventListener('mouseout', () => {
+        addDiv.classList.remove('show');
+    })
 }
 
 data.forEach(({img, name, price}) => {
