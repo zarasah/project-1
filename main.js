@@ -73,7 +73,7 @@ let counter = 0;
 
 function addToCart() {
     counter++;
-    console.log(counter);
+    
     const countDiv = document.querySelector('.counter') || document.createElement('div');
     countDiv.classList.add('counter');
     const basket = document.querySelector('.basket');
