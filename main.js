@@ -61,8 +61,23 @@ function addProduct(img, name, price) {
     newDiv.addEventListener('mouseout', () => {
         addDiv.classList.remove('show');
     })
+
+    addDiv.addEventListener('click', addToCart);
 }
 
 data.forEach(({img, name, price}) => {
     addProduct(img, name, price);
 })
+
+let counter = 0;
+
+function addToCart() {
+    counter++;
+    console.log(counter);
+    const countDiv = document.querySelector('.counter') || document.createElement('div');
+    countDiv.classList.add('counter');
+    const basket = document.querySelector('.basket');
+
+    countDiv.textContent = counter;
+    basket.appendChild(countDiv);
+}
