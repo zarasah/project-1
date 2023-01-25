@@ -181,6 +181,7 @@ body {
     height: 300px;
     width: 200px;
     margin-top: 5%;
+    user-select: none;
 }
 
 .main__right h3 {
@@ -196,9 +197,34 @@ body {
     background-color: rgb(246, 190, 141);
     text-align: center;
     margin: 5%;
+    user-select: none;
 }
 
 .show:hover {
     font-weight: 700;
 }
 
+.wrapper {
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column-reverse;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+}
+
+.history {
+    flex: 1 1 auto;
+    margin: 0 5px;
+}
+
+.wrapper img {
+    width: 70px;
+    height: 100px;
+}
+
+.wrapper p {
+    font-size: 15px;
+}
